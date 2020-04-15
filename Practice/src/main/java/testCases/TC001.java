@@ -46,7 +46,9 @@ public class TC001 {
 			int sum = 0;
 			for(int i = 0;i < category.size();i++)
 			{
-				sum = Integer.parseInt(category.get(i).getText());
+				String dt = category.get(i).getText();
+				
+				sum = sum + Integer.parseInt(dt.replaceAll("\\D", ""));
 			}
 			
 			if (sum == total) System.out.println("Matching : Sum is " + sum + " , Total is : " + total);
@@ -65,7 +67,8 @@ public class TC001 {
 			driver.findElementByXPath("//label[@class=' common-customCheckbox']//following-sibling::div").click();
 			
 //			9) Close the pop-up x
-			driver.findElementByClassName("myntraweb-sprite FilterDirectory-close sprites-remove").click();
+			driver.findElementByXPath("//span[@class='myntraweb-sprite FilterDirectory-close sprites-remove']").click();
+			Thread.sleep(5000);
 			
 //			10) Confirm all the Coats are of brand MANGO
 //			    findElements (brand) -> List<WebElement> 
@@ -100,8 +103,8 @@ public class TC001 {
 			WebElement ele2 = driver.findElementByXPath("(//h3[@class='product-brand'])[1]");
 			builder.moveToElement(ele2).perform();
 			Thread.sleep(1000);
-			WebElement ele3 = driver.findElementByXPath("(//span[@class='product-sizeNoInventoryPresent'])[4]");
-			builder.moveToElement(ele3).perform();
+//			WebElement ele3 = driver.findElementByXPath("(//span[@class='product-sizeNoInventoryPresent'])[4]");
+//			builder.moveToElement(ele3).perform();
 			
 //			14) Click on WishList Now
 			driver.findElementByXPath("(//span[text()='wishlist now'])[1]").click();
