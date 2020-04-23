@@ -111,6 +111,7 @@ public class TC002Nykaa extends ProjectSpecificMethods{
 			
 //			17) Close all windows
 			driver.close();
+			Thread.sleep(4000);
 			driver.switchTo().window(winLis.get(0));
 			driver.close();
 			

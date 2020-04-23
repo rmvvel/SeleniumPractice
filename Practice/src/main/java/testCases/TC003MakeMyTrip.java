@@ -49,8 +49,8 @@ public class TC003MakeMyTrip  extends ProjectSpecificMethods{
 			driver.findElementByXPath("//button[@id='hsw_search_button']").click();
 			Thread.sleep(5000);
 			//p[text()='Explore Hotels on Map']
-			driver.get(driver.getCurrentUrl());
-			Thread.sleep(1000);
+//			driver.get(driver.getCurrentUrl());
+//			Thread.sleep(1000);
 //			JavascriptExecutor js = (JavascriptExecutor) driver;
 //			js.executeScript("window.scrollBy(0,500)");
 			
@@ -60,6 +60,13 @@ public class TC003MakeMyTrip  extends ProjectSpecificMethods{
 			driver.findElementByXPath("//i[@class='we_forward']").click();
 			Thread.sleep(2000);
 			driver.switchTo().defaultContent();
+			Thread.sleep(2000);
+			driver.findElementByXPath("//a[@class='mapCont']").click();
+			Thread.sleep(2000);
+			driver.findElementByXPath("//span[@class='mapClose']").click();
+			Thread.sleep(2000);
+//			driver.findElementByXPath("//p[text()='Explore Hotels on Map']").click();
+			
 			WebElement baga = driver.findElementByXPath("//label[text()='Baga']");
 //			builder.moveByOffset(baga.getLocation().getX(), baga.getLocation().getY()).perform();
 			builder.moveToElement(baga).perform();

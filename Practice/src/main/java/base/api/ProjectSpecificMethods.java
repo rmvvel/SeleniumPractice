@@ -8,10 +8,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class ProjectSpecificMethods {
 	public static ChromeOptions options;
-	public static ChromeDriver driver;
+	public static RemoteWebDriver driver;
 	public static Actions builder;
 	
 	public void launch(String url) {
@@ -21,6 +22,7 @@ public class ProjectSpecificMethods {
 	      File file = new File(filePath);
 	    tempDelete tmp = new tempDelete();
 	    tmp.deleteFolder(file);
+	    //taskkill /F /IM chromedriver.exe
 	    
 		options = new ChromeOptions();
 		options.addArguments("--disable-notifications");
