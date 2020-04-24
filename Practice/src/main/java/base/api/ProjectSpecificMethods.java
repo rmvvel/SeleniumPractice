@@ -17,11 +17,11 @@ public class ProjectSpecificMethods {
 	
 	public void launch(String url) {
 		System.out.println(" *** Program Starts ***");
-		String filePath = "C:\\Users\\BM\\AppData\\Local\\Temp";
+//		String filePath = "C:\\Users\\BM\\AppData\\Local\\Temp";
 	      //Creating the File object
-	      File file = new File(filePath);
-	    tempDelete tmp = new tempDelete();
-	    tmp.deleteFolder(file);
+//	      File file = new File(filePath);
+//	    tempDelete tmp = new tempDelete();
+//	    tmp.deleteFolder(file);
 	    //taskkill /F /IM chromedriver.exe
 	    
 		options = new ChromeOptions();

@@ -98,6 +98,8 @@ public class TC006BigBasket extends ProjectSpecificMethods{
 			
 //			19) Close the Browser
 			driver.close();
+			
+			System.out.println(" *** Program Ends ***");
 	}
 
 }
