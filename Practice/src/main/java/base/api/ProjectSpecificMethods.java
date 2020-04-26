@@ -23,6 +23,7 @@ public class ProjectSpecificMethods {
 //	    tempDelete tmp = new tempDelete();
 //	    tmp.deleteFolder(file);
 	    //taskkill /F /IM chromedriver.exe
+//		setTimeout(function(){debugger;},5000)
 	    
 		options = new ChromeOptions();
 		options.addArguments("--disable-notifications");
