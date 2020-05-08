@@ -140,6 +140,7 @@ public class TC007Honda extends ProjectSpecificMethods {
 			Thread.sleep(3000);
 			driver.switchTo().window(winL.get(0));
 			driver.close();
+			System.out.println(" *** Program Ends ***");
 	}
 
 }

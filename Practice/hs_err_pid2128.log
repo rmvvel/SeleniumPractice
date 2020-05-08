@@ -1,0 +1,307 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  Internal Error (0xc06d007e), pid=2128, tid=0x0000000000000dc4
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_171-b11) (build 1.8.0_171-b11)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.171-b11 mixed mode windows-amd64 compressed oops)
+# Problematic frame:
+# C  [KERNELBASE.dll+0x88dc]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000000020c3800):  JavaThread "main" [_thread_in_native, id=3524, stack(0x0000000001fc0000,0x00000000020c0000)]
+
+siginfo: ExceptionCode=0xc06d007e, ExceptionInformation=0x00000000020b9c10 
+
+Registers:
+RAX=0x000000000000000e, RBX=0x0000000000000000, RCX=0x0000000000610000, RDX=0x000000000061e420
+RSP=0x00000000020b9b10, RBP=0x00000000020b9c68, RSI=0x000000005d5b3178, RDI=0x0000000000000000
+R8 =0x00007ff8c30000c3, R9 =0x00000000003e0000, R10=0x0000000100000000, R11=0x0000000000000020
+R12=0x0000000000000004, R13=0x000000005d5b6370, R14=0x000000005d5b6108, R15=0x000000005d5b33e0
+RIP=0x00007ff8591888dc, EFLAGS=0x0000000000000206
+
+Top of Stack: (sp=0x00000000020b9b10)
+0x00000000020b9b10:   000000005d5b33e0 0000000000000000
+0x00000000020b9b20:   000000005d5b3178 0000000000000000
+0x00000000020b9b30:   00000000c06d007e 0000000000000000
+0x00000000020b9b40:   00007ff8591888dc 00007ff800000001
+0x00000000020b9b50:   00000000020b9c10 000000000063a890
+0x00000000020b9b60:   000000005d5b6108 0000000000000000
+0x00000000020b9b70:   0000000000000000 00007ff859189223
+0x00000000020b9b80:   0000000000000000 000000005d5b3178
+0x00000000020b9b90:   000000005d5b3178 0000000000000000
+0x00000000020b9ba0:   0000000000000000 0000000000000000
+0x00000000020b9bb0:   000000005d5b2640 00007ff85b4830ca
+0x00000000020b9bc0:   0000000000000000 0000000000000370
+0x00000000020b9bd0:   00003448a4908b87 00007ff85bc7098d
+0x00000000020b9be0:   0000000000000000 000000005d5aed6f
+0x00000000020b9bf0:   0000000000000000 000000005d5b3178
+0x00000000020b9c00:   0000000001f404c0 00000000020b9cf8 
+
+Instructions: (pc=0x00007ff8591888dc)
+0x00007ff8591888bc:   44 3b c0 44 0f 47 c0 44 89 44 24 38 49 c1 e0 03
+0x00007ff8591888cc:   e8 73 8d ff ff 48 8d 4c 24 20 ff 15 94 0d 10 00
+0x00007ff8591888dc:   48 8b 8c 24 c0 00 00 00 48 33 cc e8 54 8b ff ff
+0x00007ff8591888ec:   48 81 c4 d8 00 00 00 c3 90 90 90 90 90 90 90 90 
+
+
+Register to memory mapping:
+
+RAX=0x000000000000000e is an unknown value
+RBX=0x0000000000000000 is an unknown value
+RCX=0x0000000000610000 is an unknown value
+RDX=0x000000000061e420 is an unknown value
+RSP=0x00000000020b9b10 is pointing into the stack for thread: 0x00000000020c3800
+RBP=0x00000000020b9c68 is pointing into the stack for thread: 0x00000000020c3800
+RSI=0x000000005d5b3178 is an unknown value
+RDI=0x0000000000000000 is an unknown value
+R8 =0x00007ff8c30000c3 is an unknown value
+R9 =0x00000000003e0000 is an unknown value
+R10=0x0000000100000000 is pointing into metadata
+R11=0x0000000000000020 is an unknown value
+R12=0x0000000000000004 is an unknown value
+R13=0x000000005d5b6370 is an unknown value
+R14=0x000000005d5b6108 is an unknown value
+R15=0x000000005d5b33e0 is an unknown value
+
+
+Stack: [0x0000000001fc0000,0x00000000020c0000],  sp=0x00000000020b9b10,  free space=998k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [KERNELBASE.dll+0x88dc]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  java.net.NetworkInterface.getAll()[Ljava/net/NetworkInterface;+0
+j  java.net.NetworkInterface.getNetworkInterfaces()Ljava/util/Enumeration;+0
+j  javax.crypto.JarVerifier.addNetworkAdapterInfo(Ljava/security/MessageDigest;)V+0
+j  javax.crypto.JarVerifier.getSystemEntropy()[B+92
+j  javax.crypto.JarVerifier.testSignatures(Ljava/security/cert/X509Certificate;Ljava/security/cert/CertificateFactory;)V+3
+j  javax.crypto.JarVerifier.access$400(Ljava/security/cert/X509Certificate;Ljava/security/cert/CertificateFactory;)V+2
+j  javax.crypto.JarVerifier$1.run()Ljava/lang/Void;+80
+j  javax.crypto.JarVerifier$1.run()Ljava/lang/Object;+1
+v  ~StubRoutines::call_stub
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;)Ljava/lang/Object;+0
+j  javax.crypto.JarVerifier.<clinit>()V+7
+v  ~StubRoutines::call_stub
+j  javax.crypto.JceSecurity.loadPolicies(Ljava/io/File;Ljavax/crypto/CryptoPermissions;Ljavax/crypto/CryptoPermissions;)V+146
+j  javax.crypto.JceSecurity.setupJurisdictionPolicies()V+344
+j  javax.crypto.JceSecurity.access$000()V+0
+j  javax.crypto.JceSecurity$1.run()Ljava/lang/Object;+0
+v  ~StubRoutines::call_stub
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;)Ljava/lang/Object;+0
+j  javax.crypto.JceSecurity.<clinit>()V+55
+v  ~StubRoutines::call_stub
+j  javax.crypto.JceSecurityManager.<clinit>()V+31
+v  ~StubRoutines::call_stub
+j  javax.crypto.Cipher.getConfiguredPermission(Ljava/lang/String;)Ljavax/crypto/CryptoPermission;+17
+j  javax.crypto.Cipher.getMaxAllowedKeyLength(Ljava/lang/String;)I+1
+j  sun.security.ssl.CipherSuite$BulkCipher.isUnlimited(ILjava/lang/String;)Z+13
+j  sun.security.ssl.CipherSuite$BulkCipher.<init>(Ljava/lang/String;Lsun/security/ssl/CipherSuite$CipherType;IIIZ)V+109
+j  sun.security.ssl.CipherSuite.<clinit>()V+150
+v  ~StubRoutines::call_stub
+j  sun.security.ssl.SSLContextImpl.getApplicableCipherSuiteList(Lsun/security/ssl/ProtocolList;Z)Lsun/security/ssl/CipherSuiteList;+10
+j  sun.security.ssl.SSLContextImpl.access$100(Lsun/security/ssl/ProtocolList;Z)Lsun/security/ssl/CipherSuiteList;+2
+j  sun.security.ssl.SSLContextImpl$AbstractTLSContext.<clinit>()V+195
+v  ~StubRoutines::call_stub
+j  java.lang.Class.forName0(Ljava/lang/String;ZLjava/lang/ClassLoader;Ljava/lang/Class;)Ljava/lang/Class;+0
+j  java.lang.Class.forName(Ljava/lang/String;)Ljava/lang/Class;+11
+j  java.security.Provider$Service.getImplClass()Ljava/lang/Class;+44
+j  java.security.Provider$Service.newInstance(Ljava/lang/Object;)Ljava/lang/Object;+146
+j  sun.security.jca.GetInstance.getInstance(Ljava/security/Provider$Service;Ljava/lang/Class;)Lsun/security/jca/GetInstance$Instance;+2
+j  sun.security.jca.GetInstance.getInstance(Ljava/lang/String;Ljava/lang/Class;Ljava/lang/String;)Lsun/security/jca/GetInstance$Instance;+56
+j  javax.net.ssl.SSLContext.getInstance(Ljava/lang/String;)Ljavax/net/ssl/SSLContext;+5
+j  okhttp3.internal.platform.Platform.getSSLContext()Ljavax/net/ssl/SSLContext;+24
+j  okhttp3.OkHttpClient.newSslSocketFactory(Ljavax/net/ssl/X509TrustManager;)Ljavax/net/ssl/SSLSocketFactory;+3
+j  okhttp3.OkHttpClient.<init>(Lokhttp3/OkHttpClient$Builder;)V+195
+j  okhttp3.OkHttpClient$Builder.build()Lokhttp3/OkHttpClient;+5
+j  org.openqa.selenium.remote.internal.OkHttpClient$Factory$1.createClient(Ljava/net/URL;)Lorg/openqa/selenium/remote/http/HttpClient;+139
+j  org.openqa.selenium.remote.http.HttpClient$Factory.createClient(Ljava/net/URL;)Lorg/openqa/selenium/remote/http/HttpClient;+7
+j  org.openqa.selenium.remote.HttpCommandExecutor.<init>(Ljava/util/Map;Ljava/net/URL;Lorg/openqa/selenium/remote/http/HttpClient$Factory;)V+68
+j  org.openqa.selenium.remote.HttpCommandExecutor.<init>(Ljava/util/Map;Ljava/net/URL;)V+6
+j  org.openqa.selenium.remote.service.DriverCommandExecutor.<init>(Lorg/openqa/selenium/remote/service/DriverService;Ljava/util/Map;)V+6
+j  org.openqa.selenium.chrome.ChromeDriverCommandExecutor.<init>(Lorg/openqa/selenium/remote/service/DriverService;)V+5
+j  org.openqa.selenium.chrome.ChromeDriver.<init>(Lorg/openqa/selenium/chrome/ChromeDriverService;Lorg/openqa/selenium/Capabilities;)V+6
+j  org.openqa.selenium.chrome.ChromeDriver.<init>(Lorg/openqa/selenium/chrome/ChromeDriverService;Lorg/openqa/selenium/chrome/ChromeOptions;)V+3
+j  org.openqa.selenium.chrome.ChromeDriver.<init>(Lorg/openqa/selenium/chrome/ChromeOptions;)V+5
+j  base.api.ProjectSpecificMethods.launch(Ljava/lang/String;)V+57
+j  testCases.TC014zalando.main([Ljava/lang/String;)V+21
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00000000145bf800 JavaThread "Service Thread" daemon [_thread_blocked, id=1524, stack(0x0000000015760000,0x0000000015860000)]
+  0x000000001454d800 JavaThread "C1 CompilerThread1" daemon [_thread_blocked, id=4752, stack(0x0000000015660000,0x0000000015760000)]
+  0x000000001454b800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=5628, stack(0x0000000015560000,0x0000000015660000)]
+  0x000000001454a000 JavaThread "Attach Listener" daemon [_thread_blocked, id=5876, stack(0x0000000015460000,0x0000000015560000)]
+  0x0000000014547000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=4400, stack(0x0000000015360000,0x0000000015460000)]
+  0x0000000014538800 JavaThread "Finalizer" daemon [_thread_blocked, id=5496, stack(0x0000000015180000,0x0000000015280000)]
+  0x00000000021b0800 JavaThread "Reference Handler" daemon [_thread_blocked, id=2736, stack(0x0000000015080000,0x0000000015180000)]
+=>0x00000000020c3800 JavaThread "main" [_thread_in_native, id=3524, stack(0x0000000001fc0000,0x00000000020c0000)]
+
+Other Threads:
+  0x0000000014516000 VMThread [stack: 0x0000000014f80000,0x0000000015080000] [id=4236]
+  0x00000000145db800 WatcherThread [stack: 0x0000000015860000,0x0000000015960000] [id=1128]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 18944K, used 15743K [0x00000000eb400000, 0x00000000ec900000, 0x0000000100000000)
+  eden space 16384K, 96% used [0x00000000eb400000,0x00000000ec35fcb0,0x00000000ec400000)
+  from space 2560K, 0% used [0x00000000ec680000,0x00000000ec680000,0x00000000ec900000)
+  to   space 2560K, 0% used [0x00000000ec400000,0x00000000ec400000,0x00000000ec680000)
+ ParOldGen       total 44032K, used 0K [0x00000000c1c00000, 0x00000000c4700000, 0x00000000eb400000)
+  object space 44032K, 0% used [0x00000000c1c00000,0x00000000c1c00000,0x00000000c4700000)
+ Metaspace       used 8225K, capacity 8422K, committed 8576K, reserved 1056768K
+  class space    used 953K, capacity 1063K, committed 1152K, reserved 1048576K
+
+Card table byte_map: [0x0000000011580000,0x0000000011780000] byte_map_base: 0x0000000010f72000
+
+Marking Bits: (ParMarkBitMap*) 0x000000005df208c0
+ Begin Bits: [0x0000000011ad0000, 0x0000000012a60000)
+ End Bits:   [0x0000000012a60000, 0x00000000139f0000)
+
+Polling page: 0x0000000001e50000
+
+CodeCache: size=245760Kb used=3118Kb max_used=3129Kb free=242641Kb
+ bounds [0x00000000021c0000, 0x00000000024d0000, 0x00000000111c0000]
+ total_blobs=1142 nmethods=811 adapters=245
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 1.830 Thread 0x000000001454d800  807       3       sun.nio.cs.SingleByte$Encoder::encode (32 bytes)
+Event: 1.830 Thread 0x000000001454d800 nmethod 807 0x00000000024c1310 code [0x00000000024c1480, 0x00000000024c1690]
+Event: 1.830 Thread 0x000000001454d800  808       3       java.util.Hashtable$Enumerator::hasMoreElements (53 bytes)
+Event: 1.830 Thread 0x000000001454d800 nmethod 808 0x00000000024cb150 code [0x00000000024cb2c0, 0x00000000024cb590]
+Event: 1.830 Thread 0x000000001454d800  809       3       java.util.Hashtable$Enumerator::nextElement (111 bytes)
+Event: 1.831 Thread 0x000000001454b800  811       4       sun.nio.cs.SingleByte$Encoder::encode (32 bytes)
+Event: 1.831 Thread 0x000000001454d800 nmethod 809 0x00000000024cb6d0 code [0x00000000024cb860, 0x00000000024cbcc8]
+Event: 1.831 Thread 0x000000001454d800  810       3       java.util.Properties::getProperty (46 bytes)
+Event: 1.831 Thread 0x000000001454d800 nmethod 810 0x00000000024cbed0 code [0x00000000024cc060, 0x00000000024cc578]
+Event: 1.833 Thread 0x000000001454b800 nmethod 811 0x00000000024cf390 code [0x00000000024cf4e0, 0x00000000024cf5f8]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (6 events):
+Event: 0.576 Thread 0x00000000020c3800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000000000232b2f4 method=java.lang.String.indexOf([CII[CIII)I @ 134
+Event: 0.920 Thread 0x00000000020c3800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000000000231b3c8 method=java.lang.String.startsWith(Ljava/lang/String;I)Z @ 25
+Event: 1.643 Thread 0x00000000020c3800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000000000248e530 method=java.io.ByteArrayInputStream.read([BII)I @ 63
+Event: 1.817 Thread 0x00000000020c3800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002458550 method=java.io.ByteArrayInputStream.read()I @ 8
+Event: 1.822 Thread 0x00000000020c3800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00000000024c4314 method=java.util.regex.Pattern$BmpCharProperty.match(Ljava/util/regex/Matcher;ILjava/lang/CharSequence;)Z @ 31
+Event: 1.822 Thread 0x00000000020c3800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000000024c42dc method=java.util.regex.Pattern$BmpCharProperty.match(Ljava/util/regex/Matcher;ILjava/lang/CharSequence;)Z @ 5
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 0.153 Thread 0x00000000020c3800 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.defineClass(Ljava/lang/String;[BII)Ljava/lang/Class; name or signature does not match> (0x00000000eb407cb0) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u171\10807\hotspot
+Event: 0.153 Thread 0x00000000020c3800 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.prefetchRead(Ljava/lang/Object;J)V name or signature does not match> (0x00000000eb407f98) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u171\10807\hotspot\src\share\vm\prim
+Event: 0.906 Thread 0x00000000020c3800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000eb9e8ac0) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u171\10807\hotspot\src\share\vm\prims\jvm.cpp, line 1435]
+Event: 0.906 Thread 0x00000000020c3800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000eb9e8eb8) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u171\10807\hotspot\src\share\vm\prims\jvm.cpp, line 1435]
+Event: 0.907 Thread 0x00000000020c3800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000eb9ecd10) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u171\10807\hotspot\src\share\vm\prims\jvm.cpp, line 1435]
+Event: 0.907 Thread 0x00000000020c3800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000eb9ed108) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u171\10807\hotspot\src\share\vm\prims\jvm.cpp, line 1435]
+Event: 0.964 Thread 0x00000000020c3800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000eba62d00) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u171\10807\hotspot\src\share\vm\prims\jvm.cpp, line 1435]
+Event: 0.964 Thread 0x00000000020c3800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000eba630f8) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u171\10807\hotspot\src\share\vm\prims\jvm.cpp, line 1435]
+Event: 1.057 Thread 0x00000000020c3800 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x00000000ebb52e58) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u171\10807\hotspot\src\share\vm\prims\methodHandles.cpp, line 1167]
+Event: 1.071 Thread 0x00000000020c3800 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x00000000ebb60380) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u171\10807\hotspot\src\share\vm\prims\methodHandles.cpp, line 1167]
+
+Events (10 events):
+Event: 1.829 loading class java/util/Hashtable$KeySet
+Event: 1.829 loading class java/util/Hashtable$KeySet done
+Event: 1.832 loading class java/net/NetworkInterface
+Event: 1.832 loading class java/net/NetworkInterface done
+Event: 1.833 loading class java/net/NetworkInterface$1
+Event: 1.833 loading class java/net/NetworkInterface$1 done
+Event: 1.833 loading class java/net/InterfaceAddress
+Event: 1.833 loading class java/net/InterfaceAddress done
+Event: 1.833 loading class java/net/DefaultInterface
+Event: 1.833 loading class java/net/DefaultInterface done
+
+
+Dynamic libraries:
+0x00007ff6c2e70000 - 0x00007ff6c2ea7000 	C:\Program Files\Java\jre1.8.0_171\bin\javaw.exe
+0x00007ff85bc40000 - 0x00007ff85bded000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ff85b480000 - 0x00007ff85b5bf000 	C:\Windows\system32\KERNEL32.DLL
+0x00007ff859180000 - 0x00007ff859295000 	C:\Windows\system32\KERNELBASE.dll
+0x00007ff857930000 - 0x00007ff8579be000 	C:\Windows\system32\apphelp.dll
+0x00007ff850930000 - 0x00007ff850985000 	C:\Windows\AppPatch\AppPatch64\AcGenral.DLL
+0x00007ff85b830000 - 0x00007ff85b8da000 	C:\Windows\system32\msvcrt.dll
+0x00007ff8592a0000 - 0x00007ff8592ce000 	C:\Windows\system32\SspiCli.dll
+0x00007ff85ae20000 - 0x00007ff85ae74000 	C:\Windows\system32\SHLWAPI.dll
+0x00007ff85b9b0000 - 0x00007ff85bb27000 	C:\Windows\system32\USER32.dll
+0x00007ff8595a0000 - 0x00007ff859734000 	C:\Windows\system32\ole32.dll
+0x00007ff8597a0000 - 0x00007ff85accb000 	C:\Windows\system32\SHELL32.dll
+0x00007ff858330000 - 0x00007ff858351000 	C:\Windows\SYSTEM32\USERENV.dll
+0x00007ff85bb90000 - 0x00007ff85bc3a000 	C:\Windows\system32\ADVAPI32.dll
+0x00007ff8523b0000 - 0x00007ff8523ce000 	C:\Windows\SYSTEM32\MPR.dll
+0x00007ff85ae90000 - 0x00007ff85afd0000 	C:\Windows\system32\RPCRT4.dll
+0x00007ff85b420000 - 0x00007ff85b479000 	C:\Windows\SYSTEM32\sechost.dll
+0x00007ff8592d0000 - 0x00007ff8594e0000 	C:\Windows\SYSTEM32\combase.dll
+0x00007ff85acd0000 - 0x00007ff85ae1c000 	C:\Windows\system32\GDI32.dll
+0x00007ff858d70000 - 0x00007ff858d85000 	C:\Windows\SYSTEM32\profapi.dll
+0x00007ff857150000 - 0x00007ff857202000 	C:\Windows\SYSTEM32\SHCORE.dll
+0x00007ff859740000 - 0x00007ff859776000 	C:\Windows\system32\IMM32.DLL
+0x00007ff85b190000 - 0x00007ff85b2e2000 	C:\Windows\system32\MSCTF.dll
+0x00007ff856b20000 - 0x00007ff856d9b000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.9600.19394_none_62486577ecb635cf\COMCTL32.dll
+0x000000005d620000 - 0x000000005d6f2000 	C:\Program Files\Java\jre1.8.0_171\bin\msvcr100.dll
+0x000000005d700000 - 0x000000005dfa0000 	C:\Program Files\Java\jre1.8.0_171\bin\server\jvm.dll
+0x00007ff851bc0000 - 0x00007ff851bc9000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ff855280000 - 0x00007ff8552a2000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ff851ea0000 - 0x00007ff851eaa000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ff85b5d0000 - 0x00007ff85b5d7000 	C:\Windows\system32\PSAPI.DLL
+0x00007ff85b2f0000 - 0x00007ff85b34a000 	C:\Windows\system32\WS2_32.dll
+0x00007ff853b70000 - 0x00007ff853b9a000 	C:\Windows\SYSTEM32\WINMMBASE.dll
+0x00007ff85b350000 - 0x00007ff85b359000 	C:\Windows\system32\NSI.dll
+0x00007ff859080000 - 0x00007ff8590cf000 	C:\Windows\SYSTEM32\cfgmgr32.dll
+0x00007ff857b80000 - 0x00007ff857ba8000 	C:\Windows\SYSTEM32\DEVOBJ.dll
+0x000000005d610000 - 0x000000005d61f000 	C:\Program Files\Java\jre1.8.0_171\bin\verify.dll
+0x000000005d5e0000 - 0x000000005d609000 	C:\Program Files\Java\jre1.8.0_171\bin\java.dll
+0x000000005d5c0000 - 0x000000005d5d6000 	C:\Program Files\Java\jre1.8.0_171\bin\zip.dll
+0x000000005d5a0000 - 0x000000005d5ba000 	C:\Program Files\Java\jre1.8.0_171\bin\net.dll
+0x00007ff8585a0000 - 0x00007ff8585f9000 	C:\Windows\system32\mswsock.dll
+0x00007ff8583a0000 - 0x00007ff858444000 	C:\Windows\SYSTEM32\DNSAPI.dll
+0x00007ff848ad0000 - 0x00007ff848ada000 	C:\Windows\System32\rasadhlp.dll
+0x00007ff8547d0000 - 0x00007ff85483b000 	C:\Windows\System32\fwpuclnt.dll
+0x000000005d550000 - 0x000000005d574000 	C:\Program Files\Java\jre1.8.0_171\bin\sunec.dll
+0x000000005d540000 - 0x000000005d54b000 	C:\Program Files\Java\jre1.8.0_171\bin\sunmscapi.dll
+0x00007ff858e40000 - 0x00007ff85901f000 	C:\Windows\system32\CRYPT32.dll
+0x00007ff858e20000 - 0x00007ff858e31000 	C:\Windows\system32\MSASN1.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=Cp1252 
+java_command: testCases.TC014zalando
+java_class_path (initial): E:\Selenium\Projects\Practice\target\classes;C:\Users\BM\.m2\repository\org\seleniumhq\selenium\selenium-java\3.141.59\selenium-java-3.141.59.jar;C:\Users\BM\.m2\repository\org\seleniumhq\selenium\selenium-api\3.141.59\selenium-api-3.141.59.jar;C:\Users\BM\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\3.141.59\selenium-chrome-driver-3.141.59.jar;C:\Users\BM\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\3.141.59\selenium-edge-driver-3.141.59.jar;C:\Users\BM\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\3.141.59\selenium-firefox-driver-3.141.59.jar;C:\Users\BM\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\3.141.59\selenium-ie-driver-3.141.59.jar;C:\Users\BM\.m2\repository\org\seleniumhq\selenium\selenium-opera-driver\3.141.59\selenium-opera-driver-3.141.59.jar;C:\Users\BM\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\3.141.59\selenium-remote-driver-3.141.59.jar;C:\Users\BM\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\3.141.59\selenium-safari-driver-3.141.59.jar;C:\Users\BM\.m2\repository\org\seleniumhq\selenium\selenium-support\3.141.59\selenium-support-3.141.59.jar;C:\Users\BM\.m2\repository\net\bytebuddy\byte-buddy\1.8.15\byte-buddy-1.8.15.jar;C:\Users\BM\.m2\repository\org\apache\commons\commons-exec\1.3\commons-exec-1.3.jar;C:\Users\BM\.m2\repository\com\google\guava\guava\25.0-jre\guava-25.0-jre.jar;C:\Users\BM\.m2\repository\com\google\code\findbugs\jsr305\1.3.9\jsr305-1.3.9.jar;C:\Users\BM\.m2\repository\org\checkerframework\checker-compat-qual\2.0.0\checker-compat-qual-2.0.0.jar;C:\Users\BM\.m2\repository\com\google\errorprone\error_prone_annotations\2.1.3\error_prone_annotations-2.1.3.jar;C:\Users\BM\.m2\repository\com\google\j2objc\j2objc-annotations\1.1\j2objc-annotations-1.1.jar;C:\Users\BM\.m2\repository\org\codehaus\mojo\animal-sniffer-annotations\1.14\animal-sniffer-annotations-1.14.jar;C:\Users\BM\.m2\repository\com\squareup\okhttp3\
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:/Program Files/Java/jre1.8.0_171/bin/server;C:/Program Files/Java/jre1.8.0_171/bin;C:/Program Files/Java/jre1.8.0_171/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.8.0_171\bin;E:\Selenium\TestLeaf\eclipse;
+USERNAME=BM
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=AMD64 Family 21 Model 112 Stepping 0, AuthenticAMD
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 8.1 , 64 bit Build 9600 (6.3.9600.19538)
+
+CPU:total 2 (initial active 2) (2 cores per cpu, 1 threads per core) family 21 model 112 stepping 0, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, mmxext, 3dnowpref, lzcnt, sse4a, tsc, tscinvbit, tscinv, bmi1
+
+Memory: 4k page, physical 4078968k(237596k free), swap 16661880k(4796k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.171-b11) for windows-amd64 JRE (1.8.0_171-b11), built on Mar 28 2018 16:06:12 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Tue May 05 08:33:43 2020
+elapsed time: 2 seconds (0d 0h 0m 2s)
+

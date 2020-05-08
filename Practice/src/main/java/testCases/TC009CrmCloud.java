@@ -14,7 +14,7 @@ import base.api.ProjectSpecificMethods;
 
 public class TC009CrmCloud extends ProjectSpecificMethods {
 
-	public static void main(String[] args) throws InterruptedException, ParseException {
+	public static void main(String[] args) throws InterruptedException, Exception{
 		
 //			1) Go to https://demo.1crmcloud.com/
 			String URL = "https://demo.1crmcloud.com/";
@@ -103,7 +103,12 @@ public class TC009CrmCloud extends ProjectSpecificMethods {
 		    String oldDate = formatter.format(date);
 			Calendar c = Calendar.getInstance();
 			//Setting the date to the given date
-			c.setTime(formatter.parse(oldDate));   
+			try {
+				c.setTime(formatter.parse(oldDate));
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}   
 			//Number of Days to add
 			int days = 4;
 			c.add(Calendar.DAY_OF_MONTH, days);  
