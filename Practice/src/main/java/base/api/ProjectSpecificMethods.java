@@ -42,7 +42,7 @@ public class ProjectSpecificMethods {
 		
 	}
 	
-	public static void killprocess(boolean tkchromedriver, boolean tkchrome, boolean temp) throws IOException
+	public void killprocess(boolean tkchromedriver, boolean tkchrome, boolean temp) throws IOException
 	{
 //		To kill choromedriver.exe at start of execution
 		if (tkchromedriver) {
